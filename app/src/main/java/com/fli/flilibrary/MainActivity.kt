@@ -25,8 +25,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         btnCalculate.setOnClickListener(this)
     }
 
-    override fun onClick(v: View?) {
-        TODO("Not yet implemented")
+    override fun onClick(view: View?) {
+        if (view?.id == R.id.btn_calculate) {
+            val inputLength = edtLength.text.toString().trim()
+            val inputWidth = edtWidth.text.toString().trim()
+            val inputHeight = edtHeight.text.toString().trim()
+            val volume = inputLength.toDouble() * inputWidth.toDouble() * inputHeight.toDouble()
+            tvResult.text = volume.toString()
+        }
     }
 }
 
