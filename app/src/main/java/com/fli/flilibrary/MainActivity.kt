@@ -31,7 +31,24 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             val inputWidth = edtWidth.text.toString().trim()
             val inputHeight = edtHeight.text.toString().trim()
             val volume = inputLength.toDouble() * inputWidth.toDouble() * inputHeight.toDouble()
-            tvResult.text = volume.toString()
+            var isEmptyField = false
+
+            if (inputLength.isEmpty()) {
+                isEmptyField = true
+                edtLength.error = "Ini gak boleh kosong"
+            }
+            if (inputWidth.isEmpty()) {
+                isEmptyField = true
+                edtWidth.error = "Ini gak boleh kosong"
+            }
+            if (inputHeight.isEmpty()) {
+                isEmptyField = true
+                edtHeight.error = "Ini gak boleh kosong"
+            }
+            if (!isEmptyField) {
+                val volume = inputLength.toDouble() * inputWidth.toDouble() * inputHeight.toDouble()
+                tvResult.text = volume.toString()
+            }
         }
     }
 }
