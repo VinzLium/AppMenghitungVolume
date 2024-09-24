@@ -1,20 +1,33 @@
 package com.fli.flilibrary
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
+import android.view.View
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
-import com.fli.flilibrary.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), View.OnClickListener {
+    private lateinit var edtWidth: EditText
+    private lateinit var edtHeight: EditText
+    private lateinit var edtLength: EditText
+    private lateinit var btnCalculate: Button
+    private lateinit var tvResult: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        edtWidth = findViewById(R.id.edt_width)
+        edtHeight = findViewById(R.id.edt_height)
+        edtLength = findViewById(R.id.edt_length)
+        btnCalculate = findViewById(R.id.btn_calculate)
+        tvResult = findViewById(R.id.tv_result)
+        btnCalculate.setOnClickListener(this)
+    }
+
+    override fun onClick(v: View?) {
+        TODO("Not yet implemented")
     }
 }
+
 
