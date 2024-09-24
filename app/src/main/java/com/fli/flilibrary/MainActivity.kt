@@ -30,9 +30,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             val inputLength = edtLength.text.toString().trim()
             val inputWidth = edtWidth.text.toString().trim()
             val inputHeight = edtHeight.text.toString().trim()
-            val volume = inputLength.toDouble() * inputWidth.toDouble() * inputHeight.toDouble()
-            var isEmptyField = false
 
+            var isEmptyField = false
             if (inputLength.isEmpty()) {
                 isEmptyField = true
                 edtLength.error = "Ini gak boleh kosong"
